@@ -60,7 +60,6 @@ def map_reduce(text, search_words=None):
 
 
 def count_top_words(reduced_data, top=10):
-    # Відображення слів за спаданням кількості зустрічей
     top_words = {}
     sorted_result = sorted(reduced_data.items(), key=lambda x: x[1])
     for word, count in sorted_result[-top:]:
@@ -83,8 +82,6 @@ if __name__ == "__main__":
     url = "https://gutenberg.net.au/ebooks01/0100021.txt"
     data = get_text(url)
     if data:
-        # Виконання MapReduce на вхідному тексті
-        # search_words = ["war", "peace", "love", "freedom"]
         result = map_reduce(data)
         visualize_top_words(result, top=20)
 
